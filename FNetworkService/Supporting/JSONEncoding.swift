@@ -11,11 +11,19 @@ import Alamofire
 
 struct AnyEncodable: Encodable {
     
+    // MARK: - Properties
+    
     private let encodable: Encodable
+    
+    
+    // MARK: - Init
     
     public init(_ encodable: Encodable) {
         self.encodable = encodable
     }
+    
+    
+    // MARK: - Public methods
     
     func encode(to encoder: Encoder) throws {
         try encodable.encode(to: encoder)
